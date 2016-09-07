@@ -290,7 +290,7 @@ module ControlUnit(
                     | I_mfc0
                     | J_jal );
 
-    assign inta = intr & (|imip);
+    assign inta = intr & (|imip) & ~cancelexe;
     assign selnpc[1] = ~cancelexe & I_eret;
     assign selnpc[0] = ~cancelexe &
                      ( inta | R_break | R_syscall | unkown | ofexcp | trapexcp );

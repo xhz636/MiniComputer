@@ -83,9 +83,10 @@ module PipelinedCPU(
     reg selmemwb, writeregwb;
 
     parameter baseaddr = 32'h00000008;
-    reg [31:0] cp0 [12:14];
-    wire [31:0] status, cause, epc;
+    reg [31:0] cp0 [9:14];
+    wire [31:0] count, unuse, compare, status, cause, epc;
     wire intr, inta;
+    reg timerintr;
     wire [7:0] imip;
     wire [1:0] selnpc;
     reg [31:0] pcid, pcexe, pcmem;
@@ -231,22 +232,49 @@ module PipelinedCPU(
     assign rsgtz   = ~dataa[31] & (|dataa);
     assign rsltz   =  dataa[31];
 
-    assign ip   = {5'b00000, iointr, 2'b00};
+    always @ (posedge clk or posedge rst) begin
+        if (rst) begin
+            timerintr <= 1'b0;
+        end
+        else if (count == compare & status[11]) begin
+            timerintr <= 1'b1;
+        end
+        else if (inta & ip[3]) begin
+            timerintr <= 1'b0;
+        end
+    end
+
+    assign ip   = {4'b0000, timerintr, iointr, 2'b00};
     assign imip = status[15:8] & ip;
-    assign intr = iointr & ~status[1] & status[0];
+    assign intr = (timerintr | iointr) & ~status[1] & status[0];
     assign statusdata = mux32_2x1(mtc0, {status[31:2], exl, ie}, datab);
     assign causedata  = mux32_2x1(mtc0, {db, cause[30:16], ip, 1'b0, exccode, 2'b00}, datab);
     assign epcdata    = mux32_2x1(mtc0, mux32_4x1(selepc, pc, pcid, pcexe, pcmem), datab);
+    assign count  = cp0[ 9];
+    assign unuse  = cp0[10];
+    assign compare= cp0[11];
     assign status = cp0[12];
     assign cause  = cp0[13];
     assign epc    = cp0[14];
     always @ (posedge clk or posedge rst) begin
         if (rst) begin
+            cp0[ 9] <= 32'b0;
+            cp0[10] <= 32'b0;
+            cp0[11] <= 32'b0;
             cp0[12] <= 32'b0;
             cp0[13] <= 32'b0;
             cp0[14] <= 32'b0;
         end
         else begin
+            if (mtc0 && rd == 5'd9) begin
+                cp0[9] <= datab;
+            end
+            else begin
+                cp0[9] <= cp0[9] + 32'd1;
+            end
+            if (mtc0 && rd == 5'd11) begin
+                cp0[11] <= datab;
+            end
             if (writestatus || (mtc0 && rd == 5'd12)) begin
                 cp0[12] <= statusdata;
             end

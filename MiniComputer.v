@@ -34,7 +34,9 @@ module MiniComputer(
     inout PS2KeyboardClk
     );
 
-    wire rst = btn[0];
+    wire [7:0] swsignal;
+    wire [4:0] btnsignal, btnpulse;
+    wire rst = btnsignal[0];
     wire [7:0] vgacolor;
     wire [9:0] x;
     wire [8:0] y;
@@ -47,22 +49,14 @@ module MiniComputer(
     wire ioread, iowrite, iointr, ps2ready, ps2of;
 
     reg clk_50mhz, clk_25mhz;
-    always @ (posedge clk or posedge rst) begin
-        if (rst) begin
-            clk_50mhz <= 1'b0;
-        end
-        else begin
-            clk_50mhz <= ~clk_50mhz;
-        end
+    always @ (posedge clk) begin
+        clk_50mhz <= ~clk_50mhz;
     end
-    always @ (posedge clk_50mhz or posedge rst) begin
-        if (rst) begin
-            clk_25mhz <= 1'b0;
-        end
-        else begin
-            clk_25mhz <= ~clk_25mhz;
-        end
+    always @ (posedge clk_50mhz) begin
+        clk_25mhz <= ~clk_25mhz;
     end
+
+    Filter filter(clk_50mhz, sw, btn, swsignal, btnsignal, btnpulse);
 
     assign memaddr  = read ? dataaddr : {16'b0, 2'b11, y[8:3], x[9:2]};
     assign iointr   = ps2ready;

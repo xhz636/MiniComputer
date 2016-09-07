@@ -7,6 +7,7 @@
    <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/MiniComputer E:|Spartan6|MiniComputer|MiniComputer.v/pcpu - PipelinedCPU</ClosedNode>
          <ClosedNode>/VGAColor E:|Spartan6|MiniComputer|VGAColor.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
