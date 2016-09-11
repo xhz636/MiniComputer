@@ -28,8 +28,6 @@ module PipelinedCPU(
     output memread,
     output [3:0] memwrite,
     output [31:0] dataaddr,
-    output ioread,
-    output iowrite,
     input iointr
     );
 

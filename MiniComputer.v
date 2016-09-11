@@ -58,14 +58,16 @@ module MiniComputer(
 
     Filter filter(clk_50mhz, sw, btn, swsignal, btnsignal, btnpulse);
 
-    assign memaddr  = read ? dataaddr : {16'b0, 2'b11, y[8:3], x[9:2]};
+    assign memaddr  = (read | (|write)) ? dataaddr : {16'b0, 2'b11, y[8:3], x[9:2]};
     assign iointr   = ps2ready;
-    assign readdata = ioread ? {24'd0, ps2dataout} : memdataout;
+    assign readdata = (dataaddr == 32'h0000C0F0) ? {4{ps2dataout}} : memdataout;
+    assign ioread   = (dataaddr == 32'h0000C0F0) & read;
+    assign iowrite  = (dataaddr == 32'h0000C0F0) & (|write);
 
     PipelinedCPU pcpu(clk_50mhz, rst,
                       pc, inst,
                       readdata, writedata, read, write, dataaddr,
-                      ioread, iowrite, iointr);
+                      iointr);
 
     ROM_32kx32 instmem(~clk_50mhz, pc, inst);
 
@@ -78,7 +80,7 @@ module MiniComputer(
                                        ps2of);
 
     VGAController vgactrl(clk_25mhz, rst,
-                          vgacolor, x, y, disp,
+                          vgacolor, x, y, display,
                           vgaRed, vgaGreen, vgaBlue, Hsync, Vsync);
     reg [7:0] ascii, color, dot;
     always @ (posedge clk or posedge rst) begin

@@ -96,7 +96,7 @@ module ControlUnit(
     wire users, usert, notstop, notcancel;
     wire selaluexe, selalumem, selloadmem;
     wire B_beq, B_bgez, B_bgezal, B_bgtz, B_blez, B_bltz, B_bltzal, B_bne;
-    wire unkown, branch;
+    wire unkown, branch, exception;
 
     assign Rspecial  = op == 6'b000000;
     assign R_add  = Rspecial & (func == 6'b100000);
@@ -221,6 +221,7 @@ module ControlUnit(
                     | I_beq | I_bgez | I_bgezal | I_bgtz
                     | I_blez | I_bltz | I_bltzal | I_bne
                     | J_j | J_jal;
+    assign exception = R_break | R_syscall | unkown | ofexcp | trapexcp;
 
     assign pcirwrite = notstop;
     assign pcsrc[1] = notcancel &
@@ -290,11 +291,10 @@ module ControlUnit(
                     | I_mfc0
                     | J_jal );
 
-    assign inta = intr & (|imip) & ~cancelexe;
+    assign inta = intr & (|imip) & ~cancelexe & ~exception;
     assign selnpc[1] = ~cancelexe & I_eret;
-    assign selnpc[0] = ~cancelexe &
-                     ( inta | R_break | R_syscall | unkown | ofexcp | trapexcp );
-    assign exl = (R_break | R_syscall | unkown | ofexcp | trapexcp) & ~I_eret;
+    assign selnpc[0] = ~cancelexe & (inta | exception);
+    assign exl = exception & ~I_eret;
     assign ie = ~inta | I_eret;
     assign selepc[1] = (unkown & delayslotexe) | ofexcp | trapexcp;
     assign selepc[0] = (inta & branch) | R_break | R_syscall | (unkown & ~delayslotexe)
@@ -306,18 +306,12 @@ module ControlUnit(
     assign exccode[2] = ofexcp | trapexcp;
     assign exccode[1] = unkown;
     assign exccode[0] = R_break | trapexcp;
-    assign writestatus = ~cancelexe &
-                       ( inta
-                       | R_break | R_syscall | unkown | ofexcp | trapexcp
-                       | I_eret );
-    assign writecause  = ~cancelexe &
-                       ( inta | R_break | R_syscall | unkown | ofexcp | trapexcp );
-    assign writeepc    = ~cancelexe &
-                       ( inta | R_break | R_syscall | unkown | ofexcp | trapexcp );
+    assign writestatus = ~cancelexe & (inta | exception | I_eret);
+    assign writecause  = ~cancelexe & (inta | exception);
+    assign writeepc    = ~cancelexe & (inta | exception);
     assign mfc0 = ~cancelexe & I_mfc0;
     assign mtc0 = ~cancelexe & I_mtc0;
-    assign cancel = ~cancelexe &
-                  ( inta | R_break | R_syscall | unkown | ofexcp | trapexcp | I_eret );
+    assign cancel = ~cancelexe & (inta | exception | I_eret);
     assign delayslot = ~cancelexe & branch;
 
 endmodule
