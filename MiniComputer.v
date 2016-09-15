@@ -94,6 +94,11 @@ module MiniComputer(
             color <= x[3] ? memdataout[15:8] : memdataout[31:24];
             dot   <= fontout;
         end
+        else begin
+            ascii <= 8'b0;
+            color <= 8'b0;
+            dot   <= 8'b0;
+        end
     end
     FontTable_8x8 font(~clk, {ascii, y[2:0]}, fontout);
     VGAColor colordecode(color, bgcolor, fgcolor);

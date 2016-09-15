@@ -1,0 +1,6 @@
+status:12-->IM7-0:[15:8],EXL:[1],IE:[0]
+cause:13-->BD:[31],IP7-0[15:8],ExcCode[6:2]
+exccode-->Int:0,Syscall:8,Bp:9,RI:10,Ov:12,TRAP:13
+epc:14
+count:9
+compare:11

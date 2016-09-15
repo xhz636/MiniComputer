@@ -1,0 +1,31 @@
+0x00000000~0x00007FFF:instruction
+    0x00000000~0x00000007:j start; #nop;
+
+0x00008000~0x0000FFFF:data
+    0x00008000~0x0000BFFF:usr
+        0x00008000~0x0000AFFF:data
+        0x0000B000~0x0000BFFF:stack
+    0x0000C000~0x0000FFFF:io
+        0x0000C000~0x0000C09F  0x0000C0A0~0x0000C0DF:scancodebuffer
+             |          |      0x0000C0E0~0x0000C0E7:scancodebufferpointer:head,tail
+             |          |      0x0000C0E8~0x0000C0EF:keyboardbufferpointer:head,tail
+             |          |      0x0000C0F0:keyboardaddress
+             |          |      0x0000C0F1:keyboardled:{Caps,Num,Scroll}=[2:0]
+             |          |      0x0000C0F2:keyboardflag:{shift, ctrl, alt, extend, release}=[4:0]
+             |          |      0x0000C0F3:input mode:0=insert, 1=change
+             |          |      0x0000C0F8~0x0000C0F9:cursor:x,y
+             |          |      0x0000C0FA:cursor symbol
+             |   vram   |      0x0000C0FB:cursor data
+             |          |      0x0000C0FC:cursor blink
+             |          |      0x0000C0FD:screen color
+             |          |      0x0000D0A0~0x0000D0FF
+             |          |           |   prog   |
+             |          |      0x0000DFA0~0x0000DFFF
+             |          |
+             |          |
+        0x0000FB00~0x0000FB9F
+        0x0000FC00~0x0000FCFF:scancodetable
+        0x0000FD00~0x0000FDFF:keyboardbuffer
+        0x0000FE00~0x0000FE7F:exception&interrupt
+        0x0000FE80~0x0000FEFF:exception&interrupt src
+        0x0000FF00~0x0000FFFF:syscall

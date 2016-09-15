@@ -1,0 +1,29 @@
+ScanCode
+0x    00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+0x00:    F9    F5 F3 F1 F2 F12   F10F8 F6 F4 09 60
+0x10:    At LS    Cl 71 31          7A 73 61 77 32
+0x20:    63 78 64 65 34 33       20 76 66 74 72 35
+0x30:    6E 62 68 67 79 36          6D 6A 75 37 38
+0x40:    2C 6B 69 6F 30 39       2E 2F 6C 3B 70 2D
+0x50:       27    5B 3D       CL RS 0A 5D    5C
+0x60:                   08             Lt
+0x70:       Dn    Rt Up Esc   F11
+0x80:          F7                               7E
+0x90:                51 21          5A 53 41 57 40
+0xA0:    43 58 44 45 24 23          56 46 54 52 25
+0xB0:    4E 42 48 47 59 5E          4D 4A 55 26 2A
+0xC0:    3C 4B 49 4F 29 28       3E 3F 4C 3A 50 5F
+0xD0:       22    7B                   7D    7C
+0xE0:
+0xF0:
+
+ASCII
+0x    0 1 2 3 4 5 6 7 8 9 A B C D E F
+0x00:
+0x10:
+0x20:   ! " # $ % & ' ( ) * + , - . /
+0x30: 0 1 2 3 4 5 6 7 8 9 : ; < = > ?
+0x40: @ A B C D E F G H I J K L M N O
+0x50: P Q R S T U V W X Y Z [ \ ] ^ _
+0x60: ` a b c d e f g h i j k l m n o
+0x70: p q r s t u v w x y z { | } ~  

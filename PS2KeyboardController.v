@@ -41,7 +41,7 @@ module PS2KeyboardController(
     reg [9:0] senddatareg;
     reg dataout, clkout;
     reg databit;
-    reg [13:0] timecnt;
+    reg [12:0] timecnt;
     reg ofreg;
 
     assign ps2data  = dataout ? databit : 1'bz;
@@ -99,7 +99,7 @@ module PS2KeyboardController(
             dataout <= 1'b0;
             clkout  <= 1'b0;
             databit <= 1'b1;
-            timecnt <= 14'd0;
+            timecnt <= 13'd0;
         end
         else if (send) begin
             sending <= 1'b1;
@@ -108,12 +108,12 @@ module PS2KeyboardController(
             dataout <= 1'b0;
             clkout  <= 1'b1;
             databit <= 1'b1;
-            timecnt <= 14'd1;
+            timecnt <= 13'd1;
         end
         else if (sending) begin
             if (clkout) begin
-                timecnt <= timecnt + 14'd1;
-                if (timecnt == 14'd0) begin
+                timecnt <= timecnt + 13'd1;
+                if (timecnt == 13'd0) begin
                     clkout  <= 1'b0;
                     dataout <= 1'b1;
                     databit <= 1'b0;
@@ -123,16 +123,16 @@ module PS2KeyboardController(
                 if (ps2clknegedge) begin
                     if (sendcnt < 4'd10) begin
                         sendcnt <= sendcnt + 4'd1;
-                        timecnt <= 14'd0;
+                        timecnt <= 13'd0;
                     end
                     else if (!ps2data) begin
                         sending <= 1'b0;
                     end
                 end
-                else if ((timecnt == 14'd1500) && (sendcnt != 4'd0)) begin
+                else if ((timecnt == 13'd750) && (sendcnt != 4'd0)) begin
                     if (sendcnt != 4'd10) begin
                         databit <= senddatareg[sendcnt];
-                        timecnt <= 14'd0;
+                        timecnt <= 13'd0;
                     end
                     else begin
                         dataout <= 1'b0;
@@ -140,7 +140,7 @@ module PS2KeyboardController(
                     end
                 end
                 else begin
-                    timecnt <= timecnt + 14'd1;
+                    timecnt <= timecnt + 13'd1;
                 end
             end
         end
