@@ -4,13 +4,13 @@
 #¹Ø¼ü¼Ä´æÆ÷º¬Òå:
 #   a0:×Ö·û´®Ê××Ö·ûµØÖ·
 printstring:
-    addi    $sp,    $sp,    -8
+    addi    $sp,    $sp,    -8      #±£´æ¼Ä´æÆ÷
     sw      $s0,    0x0($sp)
     sw      $ra,    0x4($sp)
     add     $s0,    $a0,    $zero
 printstring_continue:
-    lbu     $a0,    0x0($s0)
-    jal     printcharacter
+    lbu     $a0,    0x0($s0)        #ÔØÈë×Ö·û´®×Ö·û
+    jal     printcharacter          #Êä³ö×Ö·û
     nop
     beq     $a0,    $zero,  printstring_end
     nop
@@ -20,6 +20,6 @@ printstring_continue:
 printstring_end:
     lw      $s0,    0x0($sp)
     lw      $ra,    0x4($sp)
-    addi    $sp,    $sp,    8
+    addi    $sp,    $sp,    8       #»Ö¸´¼Ä´æÆ÷
     jr      $ra
     nop

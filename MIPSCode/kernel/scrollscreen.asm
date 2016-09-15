@@ -8,7 +8,7 @@ scrollscreen:
     ori     $t0,    $zero,  0xC000  #vram起始地址
     add     $t1,    $zero,  $zero
 scrollscreen_loop_y:
-    slti    $t3,    $t1,    59
+    slti    $t3,    $t1,    59      #59行需要向上滚动
     beq     $t3,    $zero,  scrollscreen_loop_y_end
     nop
     sll     $t3,    $t1,    8
@@ -21,7 +21,7 @@ scrollscreen_loop_x:
     nop
     add     $t5,    $t3,    $t2
     add     $t6,    $t4,    $t2
-    lhu     $t7,    0x0($t6)
+    lhu     $t7,    0x0($t6)        #将下一行内容复制到上一行中
     sh      $t7,    0x0($t5)
     addi    $t2,    $t2,    2
     j       scrollscreen_loop_x
@@ -35,7 +35,7 @@ scrollscreen_loop_y_end:
     add     $t3,    $t0,    $t3
     addi    $t2,    $zero,  1
 scrollscreen_lastline:
-    slti    $t5,    $t2,    160
+    slti    $t5,    $t2,    160     #最后一行清空
     beq     $t5,    $zero,  scrollscreen_end
     nop
     add     $t5,    $t3,    $t2

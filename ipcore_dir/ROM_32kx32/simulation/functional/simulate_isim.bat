@@ -45,6 +45,7 @@
 :: PART OF THIS FILE AT ALL TIMES.
 ::--------------------------------------------------------------------------------
 
+cp ..\..\..\ROM_32kx32.mif .
 
 
 echo "Compiling Core Verilog UNISIM/Behavioral model"

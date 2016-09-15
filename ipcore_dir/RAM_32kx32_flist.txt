@@ -1,6 +1,7 @@
 # Output products list for <RAM_32kx32>
 RAM_32kx32.asy
 RAM_32kx32.gise
+RAM_32kx32.mif
 RAM_32kx32.ngc
 RAM_32kx32.sym
 RAM_32kx32.v

@@ -1,6 +1,7 @@
 # Output products list for <ROM_32kx32>
 ROM_32kx32.asy
 ROM_32kx32.gise
+ROM_32kx32.mif
 ROM_32kx32.ngc
 ROM_32kx32.sym
 ROM_32kx32.v

@@ -45,6 +45,7 @@
 :: PART OF THIS FILE AT ALL TIMES.
 ::--------------------------------------------------------------------------------
 
+cp ..\..\..\ROM_32kx32.mif .
 
 
 vlogcomp -work work ..\..\implement\results\routed.v

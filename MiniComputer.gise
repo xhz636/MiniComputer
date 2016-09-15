@@ -22,13 +22,177 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="MiniComputer.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="MiniComputer.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="MiniComputer.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="MiniComputer.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="MiniComputer.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="MiniComputer.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="MiniComputer.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="MiniComputer.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="MiniComputer.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="MiniComputer.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="MiniComputer.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MiniComputer.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="MiniComputer.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="MiniComputer.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="MiniComputer.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="MiniComputer.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="MiniComputer.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="MiniComputer.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="MiniComputer.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="MiniComputer.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="MiniComputer.xst"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="MiniComputer_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="MiniComputer_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="MiniComputer_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="MiniComputer_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="MiniComputer_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="MiniComputer_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="MiniComputer_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="MiniComputer_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="MiniComputer_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="MiniComputer_par.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="MiniComputer_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="MiniComputer_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="MiniComputer_usage.xml"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="MiniComputer_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="minicomputer.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="minicomputer.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="minicomputer.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1473938022" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1473938022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938022" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-768542042188004822" xil_pn:start_ts="1473938022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938022" xil_pn:in_ck="5813090330625218433" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="6352624290858473952" xil_pn:start_ts="1473938022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/FontTable_8x8.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/FontTable_8x8.v"/>
+      <outfile xil_pn:name="ipcore_dir/RAM_32kx32.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/RAM_32kx32.v"/>
+      <outfile xil_pn:name="ipcore_dir/ROM_32kx32.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/ROM_32kx32.v"/>
+    </transform>
     <transform xil_pn:name="TRAN_SubProjectAbstractToPreProxy">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938022" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-1248591296531853652" xil_pn:start_ts="1473938022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938022" xil_pn:in_ck="3841672428277964494" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="1106364426758808884" xil_pn:start_ts="1473938022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938022" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-5320766073419551766" xil_pn:start_ts="1473938022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938052" xil_pn:in_ck="5560411249182854244" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2490534225589548936" xil_pn:start_ts="1473938022">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="MiniComputer.lso"/>
+      <outfile xil_pn:name="MiniComputer.ngc"/>
+      <outfile xil_pn:name="MiniComputer.ngr"/>
+      <outfile xil_pn:name="MiniComputer.prj"/>
+      <outfile xil_pn:name="MiniComputer.stx"/>
+      <outfile xil_pn:name="MiniComputer.syr"/>
+      <outfile xil_pn:name="MiniComputer.xst"/>
+      <outfile xil_pn:name="MiniComputer_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938052" xil_pn:in_ck="-5481817853030847" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-9052452850178054978" xil_pn:start_ts="1473938052">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938060" xil_pn:in_ck="-3884356794850498674" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8716700077949702655" xil_pn:start_ts="1473938052">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="MiniComputer.bld"/>
+      <outfile xil_pn:name="MiniComputer.ngd"/>
+      <outfile xil_pn:name="MiniComputer_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938118" xil_pn:in_ck="-5734945044143861788" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1473938060">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="MiniComputer.pcf"/>
+      <outfile xil_pn:name="MiniComputer_map.map"/>
+      <outfile xil_pn:name="MiniComputer_map.mrp"/>
+      <outfile xil_pn:name="MiniComputer_map.ncd"/>
+      <outfile xil_pn:name="MiniComputer_map.ngm"/>
+      <outfile xil_pn:name="MiniComputer_map.xrpt"/>
+      <outfile xil_pn:name="MiniComputer_summary.xml"/>
+      <outfile xil_pn:name="MiniComputer_usage.xml"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938172" xil_pn:in_ck="-5158595163146211939" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-2723277317048801686" xil_pn:start_ts="1473938118">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="MiniComputer.ncd"/>
+      <outfile xil_pn:name="MiniComputer.pad"/>
+      <outfile xil_pn:name="MiniComputer.par"/>
+      <outfile xil_pn:name="MiniComputer.ptwx"/>
+      <outfile xil_pn:name="MiniComputer.unroutes"/>
+      <outfile xil_pn:name="MiniComputer.xpi"/>
+      <outfile xil_pn:name="MiniComputer_pad.csv"/>
+      <outfile xil_pn:name="MiniComputer_pad.txt"/>
+      <outfile xil_pn:name="MiniComputer_par.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938238" xil_pn:in_ck="7738889441303737023" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1473938213">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="MiniComputer.ut"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="minicomputer.bgn"/>
+      <outfile xil_pn:name="minicomputer.bit"/>
+      <outfile xil_pn:name="minicomputer.drc"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938319" xil_pn:in_ck="56904371442444489" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="4500415081596399796" xil_pn:start_ts="1473938319">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1473938172" xil_pn:in_ck="-11304855192635680" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1473938164">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="MiniComputer.twr"/>
+      <outfile xil_pn:name="MiniComputer.twx"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
     </transform>
   </transforms>
 
